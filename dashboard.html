@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #74ebd5, #9face6);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: float 20s infinite;
+    }
+
+    .bubble:nth-child(1) { left: 10%; animation-duration: 10s; }
+    .bubble:nth-child(2) { left: 20%; animation-duration: 12s; }
+    .bubble:nth-child(3) { left: 25%; animation-duration: 14s; }
+    .bubble:nth-child(4) { left: 40%; animation-duration: 11s; }
+    .bubble:nth-child(5) { left: 70%; animation-duration: 13s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.5; }
+      100% { transform: translateY(-1000px) scale(0.5); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 1000px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      text-align: center;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ffffffaa;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .dashboard {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #ffffffaa;
+      color: #333;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    a.excel-link {
+      text-decoration: none;
+      color: #0077ff;
+      font-weight: bold;
+    }
+
+    .logout-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="container" id="login-box">
+    <h2>Doctor Login</h2>
+    <input type="password" id="password" placeholder="Enter Password"/>
+    <br/>
+    <button onclick="checkLogin()">Login</button>
+  </div>
+
+  <div class="container dashboard" id="dashboard">
+    <h2>Doctor Dashboard</h2>
+    
+    <div class="cards">
+      <!-- Cardiologist -->
+      <div class="card">
+        <h3>🫀 Cardiologist</h3>
+        <a class="excel-link" href="https://docs.google.com/spreadsheets/d/1V8cGBCWTVBZZxW5nN1KXlGiE8D2T_k-qIXV71GPjx9s/edit?resourcekey=&gid=672235921#gid=672235921" target="_blank">View Excel Sheet</a>
+      </div>
+
+      <!-- Gynaecologist -->
+      <div class="card">
+        <h3>🧬 Gynaecologist</h3>
+        <a class="excel-link" href="https://docs.google.com/spreadsheets/d/1S7cOwdlbKmQe9Xrj5GC3_ExYPQYxsc87gAAIr3MLwLs/edit?resourcekey=&gid=300794389#gid=300794389" target="_blank">View Excel Sheet</a>
+      </div>
+
+      <!-- Ophthalmologist -->
+      <div class="card">
+        <h3>👁️ Ophthalmologist</h3>
+        <a class="excel-link" href="https://docs.google.com/spreadsheets/d/1fJBYp8bT7kRWLK1gUHNrLwCLV0NNpUY4hXGE64JcnOA/edit?resourcekey=&gid=1386496031#gid=1386496031" target="_blank">View Excel Sheet</a>
+      </div>
+
+      <!-- Surgeon -->
+      <div class="card">
+        <h3>🛠️ Surgeon</h3>
+        <a class="excel-link" href="https://docs.google.com/spreadsheets/d/1zGsDar-J29CQF6aCEFPfa7wweFeooFK5vVPXPzeS5XI/edit?resourcekey=&gid=825760073#gid=825760073" target="_blank">View Excel Sheet</a>
+      </div>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const correctPassword = "doctor123"; // You can change this password
+
+    function checkLogin() {
+      const input = document.getElementById("password").value;
+      if (input === correctPassword) {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("dashboard").style.display = "flex";
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+
+    function logout() {
+      document.getElementById("dashboard").style.display = "none";
+      document.getElementById("login-box").style.display = "block";
+      document.getElementById("password").value = "";
+    }
+  </script>
+
+</body>
+</html>

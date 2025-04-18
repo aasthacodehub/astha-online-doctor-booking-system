@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Surgeons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .doctors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .doctor-card {
+            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.4s;
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .doctor-card img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid white;
+        }
+
+        .doctor-card h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .doctor-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Floating Elements */
+        .floating-scalpel, .floating-heart, .floating-cross {
+            position: absolute;
+            width: 100px;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out alternate;
+        }
+
+        .floating-scalpel {
+            top: 5%;
+            left: 10%;
+        }
+
+        .floating-heart {
+            bottom: 5%;
+            right: 15%;
+        }
+
+        .floating-cross {
+            top: 15%;
+            right: 5%;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Animated Button */
+        .book-btn {
+            margin-top: 40px;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #d51313;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-btn:hover {
+            background: #256070;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(255, 87, 51, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meet Our Surgeons</h1>
+        <div class="doctors">
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Dr. Richard Miller">
+                <h2>Dr. Richard Miller</h2>
+                <p>Experience: 25 Years</p>
+                <p>Specialist in Cardiothoracic Surgery</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/88.jpg" alt="Dr. Sarah Johnson">
+                <h2>Dr. Sarah Johnson</h2>
+                <p>Experience: 18 Years</p>
+                <p>Expert in Neurosurgery</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/99.jpg" alt="Dr. David Smith">
+                <h2>Dr. David Smith</h2>
+                <p>Experience: 20 Years</p>
+                <p>Specialist in Orthopedic Surgery</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Dr. Emily Roberts">
+                <h2>Dr. Emily Roberts</h2>
+                <p>Experience: 15 Years</p>
+                <p>Specialist in Plastic Surgery</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Dr. Daniel Carter">
+                <h2>Dr. Daniel Carter</h2>
+                <p>Experience: 22 Years</p>
+                <p>Expert in General Surgery</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/66.jpg" alt="Dr. Olivia Brown">
+                <h2>Dr. Olivia Brown</h2>
+                <p>Experience: 17 Years</p>
+                <p>Specialist in Laparoscopic Surgery</p>
+            </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); window.open('https://docs.google.com/forms/d/e/1FAIpQLSfwkv_ItL6B7kJfy2dFbMV2uiUHgYT7lwywtXLc0bpCywp4bg/viewform?usp=dialog', '_blank');">
+            <!-- All your input fields as before -->
+        
+            <button type="submit" class="submit-btn">Book Appointment</button>
+        </form>
+    </div>
+
+    <!-- Floating Images -->
+    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991131.png" class="floating-scalpel" alt="Scalpel Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/2785/2785819.png" class="floating-heart" alt="Heart Monitor Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991104.png" class="floating-cross" alt="Medical Cross">
+    
+
+</body>
+</html>

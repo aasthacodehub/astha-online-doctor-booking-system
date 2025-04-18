@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EasyDoc Medical</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f7ff5e;
+            color: #151514;
+        }
+
+        /* Background Slideshow */
+        .about-section {
+            color: rgb(255, 255, 255);
+            padding: 80px 20px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            animation: slideshow 20s infinite linear;
+        }
+
+        @keyframes slideshow {
+            0% { background-image: url('bl1.png'); }
+            25% { background-image: url('bl2.png'); }
+            50% { background-image: url('bl3.png'); }
+            75% { background-image: url('bl5.png'); }
+            100% { background-image: url('bl4.png'); }
+        }
+
+        .about-section h2 {
+            text-decoration: underline;
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            animation: pop 2s infinite alternate;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8), 0 0 10px #ffffff, 0 0 20px #ffffff;
+            }
+            100% {
+                transform: scale(1.1);
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8), 0 0 20px #ffcc00, 0 0 30px #ffffff;
+            }
+        }
+
+        .about-section p {
+            font-size: 1.3rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: rgb(243, 238, 238);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .about-text h3 {
+            text-decoration: underline;
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: rgb(230, 232, 229);
+            animation: pop 2s infinite alternate;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 10px #ffffff, 0 0 20px #ffffff;
+            }
+            100% {
+                transform: scale(1.1);
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 20px #ffd700, 0 0 30px #ffffff;
+            }
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-text ul li {
+            font-size: 1.3rem;
+            font-family: 'Roboto', sans-serif;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            color: rgb(251, 252, 251);
+        }
+
+        .about-text ul li::before {
+            content: "✔️";
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: #e8ff66;
+        }
+
+        /* Video Section */
+        .video-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 280px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            text-align: center;
+            padding: 60px 20px;
+            background: #eceaeb;
+        }
+
+        .why-choose h3 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: white;
+            animation: pop 2s infinite alternate;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .why-choose p {
+            font-size: 1.4rem;
+            font-family: 'Roboto', sans-serif;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: rgb(226, 30, 30);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: rgb(194, 222, 67);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-box:hover {
+            transform: scale(1.1);
+        }
+
+        .stat-box h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .stat-box p {
+            font-size: 1.2rem;
+            color: rgb(231, 23, 23);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: center;
+                max-width: 100%;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .stat-box {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>Welcome to <span class="highlight">[EasyDoc Medical]</span></h2>
+        <p><b>We are committed to providing world-class medical services with cutting-edge technology and compassionate care.</b></p>
+
+        <div class="container">
+            <div class="about-text">
+                <h3>👨‍⚕️ Who We Are</h3>
+                <p>
+                    At <strong>[EasyDoc Medical]</strong>, our team of expert doctors, surgeons, and healthcare professionals work tirelessly to ensure your well-being.
+                    With years of experience and state-of-the-art facilities, we provide <span class="highlight">top-tier medical care</span> tailored to your needs.
+                </p>
+                
+                <h3>🏥 Our Specialties</h3>
+                <ul>
+                    <li>Advanced Surgical Procedures</li>
+                    <li>24/7 Emergency Care</li>
+                    <li>Comprehensive Diagnostic Services</li>
+                    <li>Specialized Treatment Plans</li>
+                    <li>Personalized Patient Care</li>
+                </ul>
+            </div>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/cDDWvj_q-o8" 
+                    title="Doctor Services & Patient Care" 
+                    frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

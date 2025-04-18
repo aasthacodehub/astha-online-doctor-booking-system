@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Help</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            overflow: hidden;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .btn {
+            background: #fff;
+            color: #ff4b2b;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ffcccb;
+        }
+        .emergency-info {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .floating {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: floatAnimation 5s infinite ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes floatAnimation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Emergency Services Available 24/7</h1>
+        <button class="btn" onclick="showEmergencyInfo()">Get Emergency Help</button>
+        <div class="emergency-info" id="emergencyInfo">
+            <p><strong>Emergency Numbers:</strong></p>
+            <p>🚑 Ambulance: 102</p>
+            <p>🚓 Police: 100</p>
+            <p>🔥 Fire: 101</p>
+            <p><strong>Available 24/7 Doctors:</strong></p>
+            <p>👨‍⚕️ Dr. A Sharma - +91 98765 43210</p>
+            <p>👩‍⚕️ Dr. B Mehta - +91 87654 32109</p>
+            <p>👨‍⚕️ Dr. C Nair - +91 76543 21098</p>
+        </div>
+    </div>
+
+    <script>
+        function showEmergencyInfo() {
+            document.getElementById('emergencyInfo').style.display = 'block';
+        }
+
+        function createFloatingElement() {
+            let elem = document.createElement("div");
+            elem.classList.add("floating");
+            document.body.appendChild(elem);
+            elem.style.top = Math.random() * window.innerHeight + "px";
+            elem.style.left = Math.random() * window.innerWidth + "px";
+            elem.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        }
+        for (let i = 0; i < 15; i++) {
+            createFloatingElement();
+        }
+    </script>
+</body>
+</html>

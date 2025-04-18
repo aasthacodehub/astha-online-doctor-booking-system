@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Cardiologists</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .doctors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .doctor-card {
+            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.4s;
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .doctor-card img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid white;
+        }
+
+        .doctor-card h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .doctor-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Floating Elements */
+        .floating-heart, .floating-stethoscope, .floating-doctor {
+            position: absolute;
+            width: 100px;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out alternate;
+        }
+
+        .floating-heart {
+            top: 5%;
+            left: 10%;
+        }
+
+        .floating-stethoscope {
+            bottom: 5%;
+            right: 15%;
+        }
+
+        .floating-doctor {
+            top: 15%;
+            right: 5%;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Animated Button */
+        .book-btn {
+            margin-top: 40px;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(196, 46, 46);
+            background: #ff4b5c;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-btn:hover {
+            background: #1f5b5e;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(255, 75, 92, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meet Our Cardiologists</h1>
+        <div class="doctors">
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Dr. John Doe">
+                <h2>Dr. John Doe</h2>
+                <p>Experience: 15 Years</p>
+                <p>Specialist in Heart Surgery</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="Dr. Lisa Smith">
+                <h2>Dr. Lisa Smith</h2>
+                <p>Experience: 12 Years</p>
+                <p>Specialist in Pediatric Cardiology</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="Dr. Robert Brown">
+                <h2>Dr. Robert Brown</h2>
+                <p>Experience: 18 Years</p>
+                <p>Specialist in Cardiac Electrophysiology</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="Dr. Emma Johnson">
+                <h2>Dr. Emma Johnson</h2>
+                <p>Experience: 10 Years</p>
+                <p>Specialist in Heart Disease Prevention</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Dr. David Miller">
+                <h2>Dr. David Miller</h2>
+                <p>Experience: 20 Years</p>
+                <p>Specialist in Coronary Artery Disease</p>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="Dr. Sarah Williams">
+                <h2>Dr. Sarah Williams</h2>
+                <p>Experience: 14 Years</p>
+                <p>Specialist in Heart Failure Treatment</p>
+            </div>
+        </div>
+        <form onsubmit="event.preventDefault(); window.open('https://forms.gle/t9orCHeMcyj9gK7Y8', '_blank');">
+            <!-- All your input fields as before -->
+        
+            <button type="submit" class="submit-btn">Book Appointment</button>
+        </form>
+        
+    </div>
+
+    <!-- Floating Images -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1076/1076327.png" class="floating-heart" alt="Heartbeat">
+    <img src="https://cdn-icons-png.flaticon.com/512/2870/2870673.png" class="floating-stethoscope" alt="Stethoscope">
+    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448592.png" class="floating-doctor" alt="Doctor Icon">
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: slideshow 20s infinite linear;
+            color: rgb(10, 10, 10);
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes slideshow {
+            0% { background-image: url("wh1.png"); }
+            25% { background-image: url("wh2.png"); }
+            50% { background-image: url("wh3.png"); }
+            75% { background-image: url("wh4.png"); }
+            100% { background-image: url("wh6.png"); }
+        }
+
+        /* Floating Background Icons */
+        .floating-icons img {
+            position: absolute;
+            width: 100px;
+            opacity: 0.2;
+            animation: floatAnimation 6s infinite ease-in-out;
+        }
+
+        @keyframes floatAnimation {
+            0% { transform: translateY(0); opacity: 0.2; }
+            50% { transform: translateY(-15px); opacity: 0.3; }
+            100% { transform: translateY(0); opacity: 0.2; }
+        }
+
+        /* Service Section */
+        .service-section {
+            padding: 80px 30px;
+            position: relative;
+            z-index: 40;
+        }
+
+        .service-section h2 {
+            text-decoration: underline;
+            font-size: 3.5rem; /* Increased font size */
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Added spacing between letters */
+            color: #020202; /* Stylish greenish color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Added subtle text shadow */
+        }
+
+        .service-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #ffffff, #f7f7f7);
+            padding: 30px;
+            border-radius: 20px;
+            width: 320px; /* Slightly wider cards */
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.7s ease;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+            border: 2px solid #e0f2f1; /* Added light border for better pop */
+        }
+
+        .service-card:hover {
+            background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Light gradient background on hover */
+            transform: translateY(-10px); /* Added pop effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            border: 2px solid #00796b; /* Border color change on hover */
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem; /* Increased font size */
+            margin-bottom: 15px;
+            color: #00574b; /* Dark greenish color for headings */
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for text */
+        }
+
+        .service-card p {
+            font-size: 1.1rem; /* Larger font size for better readability */
+            color: #666;
+            line-height: 1.6; /* Improved line height for readability */
+        }
+
+        .service-card button {
+            background: #00796b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Button shadow for pop */
+        }
+
+        .service-card button:hover {
+            background: #004d40; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        /* Emergency Section */
+        .emergency-section {
+            background: rgb(34, 193, 195);
+            background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .emergency-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .emergency-section p {
+            margin: 10px 0 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .emergency-section button {
+            background-color: white;
+            color: rgb(34, 193, 195);
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .emergency-section button:hover {
+            background-color: rgb(34, 193, 195);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-container {
+                flex-direction: column;
+            }
+
+            .service-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-icons">
+        <img src="https://img.icons8.com/ios/100/medical-bag.png" alt="Medical Icon">
+        <img src="https://img.icons8.com/ios/100/stethoscope.png" alt="Medical Icon">
+    </div>
+
+    <section class="service-section">
+        <h2>Our Medical Services</h2>
+        <p><b>Our services are designed to assist you with appointments or urgent medical needs.</b></p>
+
+        <div class="service-container">
+            <!-- General Checkup Card -->
+            <div class="service-card" onclick="showOptions(1)">
+                <h3>General Checkup</h3>
+                <p>Comprehensive health assessments and preventive care.</p>
+                <div id="options-1" class="service-options" style="display: none;">
+                    <button onclick="window.location.href='meet our.html'">📅 Book Appointment</button>
+                    <button onclick="window.location.href='emergency.html'">🚑 Emergency Services</button>
+                </div>
+            </div>
+
+            <!-- Specialist Consultation Card -->
+            <div class="service-card" onclick="showOptions(2)">
+                <h3>Specialist Consultation</h3>
+                <p>Consult with experienced specialists in various fields.</p>
+                <div id="options-2" class="service-options" style="display: none;">
+                    <button onclick="window.location.href='.html'">📅 Book Appointment</button>
+                    <button onclick="window.location.href='specialist_emergency.html'">🚑 Emergency Services</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="emergency-section">
+        <h2>🚨 Emergency Services Available 24/7</h2>
+        <p>If you need urgent medical attention, click the button below.</p>
+        <button onclick="window.location.href='emergency.html'">🚑 Get Emergency Help</button>
+    </section>
+
+    <script>
+        function showOptions(id) {
+            // Hide all service options
+            const allOptions = document.querySelectorAll('.service-options');
+            allOptions.forEach(option => (option.style.display = 'none'));
+
+            // Show the selected options
+            const selectedOptions = document.getElementById(`options-${id}`);
+            if (selectedOptions.style.display === 'block') {
+                selectedOptions.style.display = 'none';
+            } else {
+                selectedOptions.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

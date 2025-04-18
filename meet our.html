@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Doctors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #004e92, #000428);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            background: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .doctor-options {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .doctor-options div {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            margin: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .doctor-options div:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Background Animation */
+        .floating-stethoscope {
+            position: absolute;
+            width: 120px;
+            animation: float 6s infinite ease-in-out;
+            top: 10%;
+            left: 5%;
+            opacity: 0.8;
+        }
+
+        .floating-heartbeat {
+            position: absolute;
+            width: 150px;
+            animation: float 5s infinite ease-in-out alternate;
+            bottom: 10%;
+            right: 10%;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meet Our Doctors</h1>
+        <button class="btn" onclick="showDoctors()">View Specialties</button>
+
+        <div class="doctor-options" id="doctorOptions">
+            <div onclick="window.location.href='cardio.html'">🫀 Cardiologist</div>
+
+            <div onclick="window.location.href='optho.html'">👁️ Ophthalmologist</div>
+            <div onclick="window.location.href='surgen.html'">🩺 Surgeon</div>
+            <div onclick="window.location.href='gyno.html'">🤰 Gynecologist</div>
+        </div>
+    </div>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/2870/2870673.png" class="floating-stethoscope" alt="Stethoscope">
+    <img src="https://cdn-icons-png.flaticon.com/512/1076/1076327.png" class="floating-heartbeat" alt="Heartbeat">
+
+    <script>
+        function showDoctors() {
+            document.getElementById('doctorOptions').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

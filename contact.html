@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Emergency Help</title>
+    <style>
+        /* Background Animation */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #001f3f, #308da0);
+            background-size: 300% 300%;
+            animation: gradientMove 8s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating Circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: moveUpDown 6s infinite alternate ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            top: 10%;
+            left: 20%;
+            animation-duration: 7s;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.3);
+            top: 40%;
+            left: 60%;
+            animation-duration: 5s;
+        }
+
+        .circle:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.25);
+            top: 70%;
+            left: 30%;
+            animation-duration: 8s;
+        }
+
+        @keyframes moveUpDown {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-20px); }
+        }
+
+        /* Contact Card with Glassmorphism */
+        .contact-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: rgb(6, 6, 6);
+            width: 420px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+
+        /* Emergency Help Button with Pulse Effect */
+        .emergency-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(204, 23, 23);
+            background: red;
+            border: none;
+            border-radius: 70px;
+            cursor: pointer;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: pulse 1.5s infinite;
+        }
+
+        .emergency-btn:hover {
+            background: darkred;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8); }
+            50% { transform: scale(1.05); box-shadow: 0px 0px 25px rgba(255, 0, 0, 1); }
+            100% { transform: scale(1); box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8); }
+        }
+
+        /* ECG Line Animation */
+        .ecg-container {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .ecg-line {
+            width: 100%;
+            height: 100px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/4/45/ECG_animated.gif') repeat-x;
+            background-size: contain;
+            animation: ecgMove 2s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes ecgMove {
+            from { background-position: 100% 0; }
+            to { background-position: 0 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Floating Animated Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- ECG Wave Animation -->
+    <div class="ecg-container">
+        <div class="ecg-line"></div>
+    </div>
+
+    <!-- Contact Information Box -->
+    <div class="contact-container">
+        <h2>📞 Contact Us</h2>
+        <p>Please feel free to reach out!</p>
+        <p><span class="highlight">📱 Phone:</span> 7805050974</p>
+        <p><span class="highlight">📧 Email:</span> aasthatrivedi6@gmail.com</p>
+        <p>If you need urgent help, contact our emergency desk doctor immediately.</p>
+
+        <!-- Emergency Help Desk Button -->
+        <a href="emergency.html">
+            <button class="book-btn">🚑 Emergency Help Desk</button>
+        </a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
